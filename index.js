@@ -2,7 +2,7 @@ const button = document.querySelector('button');
 var images = [];
 button.addEventListener('click', event => {
   var image = new Image();
-  image.src = "D:/Nouveau dossier/img/img1.jpg";
+  image.src = "./img/img1.jpg";
   images.push(image);
   console.log(document.getElementById('grid-container'));
   console.log(images)
