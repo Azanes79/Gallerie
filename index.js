@@ -4,7 +4,7 @@ var i = 1;
 let html = ``;
 button.addEventListener('click', event => {
   let requests = fetch('./images.json');
-  new Promise(requests).then(_res => {
+  let promise = new Promise(requests).then(_res => {
     console.log(_res);
   });
   html += `<div class="card">
