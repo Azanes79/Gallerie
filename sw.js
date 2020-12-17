@@ -1,1 +1,3 @@
-Self.addEventListener('fetch',event=>{    event.RespondWith(newResponse('PWA!!!!'));});
+// Self.addEventListener('fetch', event => {    
+//     event.RespondWith(newResponse('PWA!!!!'));
+// });

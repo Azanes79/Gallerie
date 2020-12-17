@@ -1,16 +1,24 @@
 {
     "name": "Galerie PWA",
-    "start_url": "/",
     "short_name": "Galerie",
     "icons": [
         {
             "src": "img/rocket.png",
-            "sizes": "72x72","type": "image/png"
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any maskable"
         },
         {
             "src": "img/rocket.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         }
-    ]
+    ],
+    "background_color":"white",
+    "theme_color": "#FFFFFF",
+    "scope": "/",
+    "start_url": "/index.html",
+    "display": "fullscreen",
+    "orientation": "landscape"
 }
