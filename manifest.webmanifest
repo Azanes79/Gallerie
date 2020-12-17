@@ -18,7 +18,7 @@
     "background_color":"white",
     "theme_color": "#FFFFFF",
     "scope": "/",
-    "start_url": "/index.html",
+    "start_url": "https://wonderful-haibt-c1c7e8.netlify.app/index.html",
     "display": "fullscreen",
     "orientation": "landscape"
 }

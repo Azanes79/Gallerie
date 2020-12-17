@@ -35,3 +35,10 @@ p {
     font-weight: 600;
 }
 
+.grid-button {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 100px;
+}
