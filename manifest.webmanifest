@@ -1,0 +1,16 @@
+{
+    "name": "Galerie PWA",
+    "start_url": "/",
+    "short_name": "Galerie",
+    "icons": [
+        {
+            "src": "img/rocket.png",
+            "sizes": "72x72","type": "image/png"
+        },
+        {
+            "src": "img/rocket.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

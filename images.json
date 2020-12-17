@@ -1,20 +1,20 @@
 [{
     "desc": "photo 1",
-    "link": "./img/img1"
+    "link": "./img/img1.jpg"
 },
 {
     "desc": "photo 2",
-    "link": "./img/img2"
+    "link": "./img/img2.jpg"
 },
 {
     "desc": "photo 3",
-    "link": "./img/img3"
+    "link": "./img/img3.jpg"
 },
 {
     "desc": "photo 4",
-    "link": "./img/img4"
+    "link": "./img/img4.jpg"
 },
 {
     "desc": "photo 5",
-    "link": "./img/img5"
+    "link": "./img/img5.jpg"
 }]
