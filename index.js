@@ -1,13 +1,24 @@
 const button = document.querySelector('button');
 var images = [];
+var i = 1;
+let html = ``;
 button.addEventListener('click', event => {
-  var image = new Image();
-  image.src = "./img/img1.jpg";
-  images.push(image);
-  console.log(document.getElementById('grid-container'));
-  console.log(images)
-  for (var i = images.length - 1; i >= 0; i--) {
-  	document.getElementById('grid-container').appendChild(images[i]);
+  let requests = fetch('./images.json');
+  new Promise(requests).then(_res => {
+    console.log(_res);
+  });
+  html += `<div class="card">
+    <div class="header">
+      <img src="./img/img${i}.jpg">
+    </div>
+    <div class="content">
+      <p>Ceci est une description</p>
+    </div>
+  </div>`;
+  document.getElementById('grid-container').innerHTML = html
+  if ( i === 5) {
+    i = 1;
+  } else {
+    i++
   }
-  
 });
