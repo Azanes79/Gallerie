@@ -3,10 +3,7 @@ var images = [];
 var i = 1;
 let html = ``;
 button.addEventListener('click', event => {
-  let requests = fetch('./images.json');
-  let promise = new Promise(requests).then(_res => {
-    console.log(_res);
-  });
+  getImages();
   html += `<div class="card">
     <div class="header">
       <img src="./img/img${i}.jpg">
@@ -22,3 +19,8 @@ button.addEventListener('click', event => {
     i++
   }
 });
+
+async function getImages() {
+  const data = await new Promise(fetch('https://wonderful-haibt-c1c7e8.netlify.app/images.json'));
+  console.log(data);
+}
