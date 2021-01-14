@@ -9,17 +9,30 @@
 	<title>PWA Exercice 1</title>
 	<link rel="stylesheet" href="index.css">
 	<link rel="manifest" href="manifest.webmanifest" />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/localforage/1.7.3/localforage.min.js"></script>
 	<script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.9/pwacompat.min.js"
 		integrity="sha384-VcI6S+HIsE80FVM1jgbd6WDFhzKYA0PecD/LcIyMQpT4fMJdijBh0I7Iblaacawc"
 		crossorigin="anonymous"></script>
 	<script>
 
-		if ('serviceWorker' in navigator) {
-			navigator.serviceWorker.register("/sw.js").then((reg) => {
-				console.log("votre service worker a été enregistré!");
-			}).catch((error) => {
-				console.error(error);
-			});
+		if ("serviceWorker" in navigator) {
+			navigator.serviceWorker
+				.register("/sw.js", { updateViaCache: 'none' })
+				.then((reg) => {
+					console.log("Votre service worker a été enregistré!");
+					reg.addEventListener('updatefound', () => {
+						const installing = reg.installing;
+						installing.addEventListener('statechange', () => {
+							if (installing.state === 'installed') {
+								// Afficher un message aux utilisateurs 
+								console.log("Votre service worker a été mis à jour! Veuillez rafraîchir la page");
+							}
+						});
+					});
+				})
+				.catch((error) => {
+					console.error(error);
+				});
 		} else {
 			console.warn("Service workers are not supported.");
 		}
@@ -27,6 +40,9 @@
 </head>
 
 <body>
+	<div class="notification is-danger">
+		Vous êtes hors ligne.
+	  </div>
 	<div class="grid-button">
 		<button id="test">Installer</button>
 		<button id="add-image">Afficher une image</button>
@@ -36,7 +52,7 @@
 
 	</div>
 </body>
-<script src="index.js"></script>
+<script src="script.js"></script>
 
 </html>
 

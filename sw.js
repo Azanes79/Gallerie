@@ -1,11 +1,11 @@
+importScripts("./src/install.js"); 
+importScripts("./src/activate.js"); 
+importScripts("./src/fetch.js"); 
 
-self.addEventListener('fetch', event => {
-    // console.log('fetch sans event')
-    event.waitUntil(console.log('fetch'));
-});
+const cacheName = "Galerie-Alexis-Lemarchand";
 
-self.addEventListener('install', event => {
-    event.waitUntil(console.log('Install success'));
-});
-
-
+const files = [
+  "/",
+  "/script.js",  
+  "https://cdnjs.cloudflare.com/ajax/libs/localforage/1.7.3/localforage.min.js"
+];

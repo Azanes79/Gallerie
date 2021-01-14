@@ -46,3 +46,7 @@ p {
 #add-image {
     grid-column: 2;
 }
+
+.is-danger {
+    background-color: rgb(221, 96, 96);
+}
