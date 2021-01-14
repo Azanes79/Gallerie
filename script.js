@@ -22,8 +22,15 @@ button.addEventListener('click', async event => {
 
 async function getImages() {
   try {
-    const data = await ((await fetch('https://wonderful-haibt-c1c7e8.netlify.app/images.json')).json());
-    images = data;
+    if (navigator.onLine) {
+      console.log('getImageOnline');
+      const data = await ((await fetch('https://wonderful-haibt-c1c7e8.netlify.app/images.json')).json());
+      images = data;
+    } else {
+      console.log('getImageOffline');
+      console.log(localforage.getItem("data"))
+      images = await localforage.getItem("data");
+    }
   } catch (e) {
     alert("Images inaccessibles");
   }
@@ -65,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   let fetchData;
   if (navigator.onLine) {
+    console.log('DOMContentLoaded Online');
     fetchData = fetch("https://wonderful-haibt-c1c7e8.netlify.app/images.json")
       .then((response) => response.json())
       .then((data) => localforage.setItem("data", data));
@@ -72,6 +80,4 @@ document.addEventListener("DOMContentLoaded", function () {
   else {
     fetchData = localforage.getItem("data");
   }
-
-  fetchData.then((json) => afficher(json));
 });
